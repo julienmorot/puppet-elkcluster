@@ -40,7 +40,7 @@ path.logs: /var/log/elasticsearch
 #
 # Lock the memory on startup:
 #
-#bootstrap.memory_lock: true
+bootstrap.memory_lock: true
 #
 # Make sure that the heap size is set to about half the memory available
 # on the system and that the owner of the process is allowed to use this
@@ -66,7 +66,7 @@ http.port: 9200
 # The default list of hosts is ["127.0.0.1", "[::1]"]
 #
 #discovery.zen.ping.unicast.hosts: ["host1", "host2"]
-discovery.zen.ping.unicast.hosts: [" <%= @elkcluster_nodes.join('", ") %>"]
+discovery.zen.ping.unicast.hosts: ["<%= @elkcluster_nodes.join('", "') %>"]
 #
 # Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
 #
