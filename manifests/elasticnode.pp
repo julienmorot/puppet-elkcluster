@@ -1,6 +1,9 @@
 class elkcluster::elasticnode (
     $elkcluster_name   = '',
-    $elkcluster_nodes = '',
+    $elkcluster_nodes  = '',
+	$master            = 'true',
+	$data              = 'true',
+	$index_number_of_replicas = '1'
 ) {
 
 	sysctl { 'vm.max_map_count': value => '262144' }
