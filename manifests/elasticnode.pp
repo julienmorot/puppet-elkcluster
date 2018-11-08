@@ -23,7 +23,7 @@ class elkcluster::elasticnode (
 		value => "65536";
 	}
 
-	Package { 'default-jre': ensure => present }
+	ensure_packages(['default-jre'], { ensure => present })
 
 	Package { 'elasticsearch':
 		ensure   => present,
