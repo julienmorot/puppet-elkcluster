@@ -6,6 +6,7 @@ class elkcluster::elasticnode (
 	$index_number_of_replicas = '1'
 ) {
 
+	include ::elkcluster
 	sysctl { 'vm.max_map_count': value => '262144' }
 
 	limits::fragment {
@@ -23,14 +24,6 @@ class elkcluster::elasticnode (
 	}
 
 	Package { 'default-jre': ensure => present }
-
-    apt::source { "elasticsearch_deb_repo":
-        location => "https://artifacts.elastic.co/packages/6.x/apt",
-        #key      => "D27D666CD88E42B4",
-		key      => "46095ACC8548582C1A2699A9D27D666CD88E42B4",
-        repos    => "main",
-        release  => "stable",
-    }
 
 	Package { 'elasticsearch':
 		ensure   => present,

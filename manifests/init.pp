@@ -44,5 +44,12 @@
 #
 class elkcluster {
 
+    apt::source { "elasticsearch_deb_repo":
+        location => "https://artifacts.elastic.co/packages/6.x/apt",
+		key      => "46095ACC8548582C1A2699A9D27D666CD88E42B4",
+        repos    => "main",
+        release  => "stable",
+    }
 
 }
+
