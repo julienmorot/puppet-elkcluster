@@ -87,9 +87,3 @@ discovery.zen.ping.unicast.hosts: ["<%= @elkcluster_nodes.join('", "') %>"]
 # Require explicit names when deleting indices:
 #
 #action.destructive_requires_name: true
-master: <%= @master %>
-data: <%= @data %>
-index.number_of_replicas: <%= @index_number_of_replicas %>
-indices.query.cache.enabled: false
-
-

@@ -1,9 +1,6 @@
 class elkcluster::elasticnode (
     $elkcluster_name   = '',
     $elkcluster_nodes  = '',
-	$master            = 'true',
-	$data              = 'true',
-	$index_number_of_replicas = '1'
 ) {
 
 	include ::elkcluster
@@ -22,6 +19,13 @@ class elkcluster::elasticnode (
 		"root/hard/nofile":
 		value => "65536";
 	}
+
+    limits::fragment {
+        "elasticsearch/soft/memlock":
+        value => "unlimited";
+        "elasticsearch/hard/memlock":
+        value => "unlimited";
+    }
 
 	ensure_packages(['default-jre'], { ensure => present })
 
