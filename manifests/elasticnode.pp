@@ -52,6 +52,7 @@ class elkcluster::elasticnode (
 
 	Service { 'elasticsearch':
 		ensure  => 'running',
+		enable  => 'true',
 	}
 
 
