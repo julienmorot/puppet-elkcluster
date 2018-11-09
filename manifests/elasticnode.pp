@@ -20,12 +20,12 @@ class elkcluster::elasticnode (
 		value => "65536";
 	}
 
-    limits::fragment {
-        "elasticsearch/soft/memlock":
-        value => "unlimited";
-        "elasticsearch/hard/memlock":
-        value => "unlimited";
-    }
+	limits::fragment {
+		"elasticsearch/soft/memlock":
+		value => "unlimited";
+		"elasticsearch/hard/memlock":
+		value => "unlimited";
+	}
 
 	ensure_packages(['default-jre'], { ensure => present })
 
