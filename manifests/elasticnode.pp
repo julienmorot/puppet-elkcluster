@@ -30,7 +30,7 @@ class elkcluster::elasticnode (
 	ensure_packages(['default-jre'], { ensure => present })
 
 	Package { 'elasticsearch':
-		ensure   => present,
+		ensure   => "6.6.1",
 	}
 
 	file { '/etc/elasticsearch/elasticsearch.yml':

@@ -34,7 +34,7 @@ class elkcluster::logstash (
     # Workaround because logstash doesn't start with UseParNewGC JVM options
     #And the behaviour prevent apt to finish logtash installation
     Package { 'logstash':
-        ensure   => present,
+        ensure   => "6.6.1",
         require => File['/etc/logstash/jvm.options'],
     }
 

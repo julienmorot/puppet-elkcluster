@@ -5,7 +5,7 @@ class elkcluster::filebeat (
 	ensure_packages(['default-jre'], { ensure => present })
 
 	Package { 'filebeat':
-		ensure   => present,
+		ensure   => "6.6.1",
 	}
 
 	File { '/etc/filebeat/filebeat.yml':

@@ -7,7 +7,7 @@ class elkcluster::kibana (
 	ensure_packages(['default-jre'], { ensure => present })
 
 	Package { 'kibana':
-		ensure   => present,
+		ensure   => "6.6.1",
 	}
 
 	File { '/etc/kibana/kibana.yml':
